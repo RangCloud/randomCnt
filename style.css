@@ -1,0 +1,54 @@
+body {
+  background-color: antiquewhite;
+  font-family: "Press Start 2P", cursive;
+}
+
+.main-title {
+  font-size: 50px;
+}
+
+img {
+  width: 400px;
+  height: 400px;
+}
+
+.container {
+  text-align: center;
+  height: auto;
+  border: 1px solid antiquewhite;
+}
+
+.button-style {
+  height: 60px;
+  width: 100px;
+  margin-top: 5px;
+  border-radius: 50px;
+  font-size: 20pt;
+  background-color: red;
+}
+
+.formCt {
+  width: 100px;
+  height: 40px;
+  font-size: 3vw;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.upDownImg {
+  width: 800px;
+  height: 400px;
+  margin: 0 auto;
+  display: flex;
+}
+
+#up-yellow {
+  position: absolute;
+  display: none;
+}
+
+#down-yellow {
+  position: absolute;
+  display: none;
+  justify-content: right;
+}

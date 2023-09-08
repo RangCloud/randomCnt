@@ -16,41 +16,41 @@ userInput.addEventListener("focus", focusInput);
 function pickRandomNumber() {
   // 랜덤숫자 뽑기
 
-  number = Math.floor(Math.random() * 100) + 1;
+  number = Math.floor(Math.random() * 100) + 1; //  1 ~ 100 랜덤으로 선택
   console.log("정답", number);
 }
 
-let imgDisplay1 = document.getElementById("up-yellow");
-let imgDisplay2 = document.getElementById("down-yellow");
+let imgDisplay1 = document.getElementById("up-yellow"); // 이미지1
+let imgDisplay2 = document.getElementById("down-yellow"); // 이미지2
 
 function play() {
-  // 숫자 추측하기
+  // 숫자 맞추기
   const userValue = userInput.value;
   if (userValue < 1 || userValue > 100) {
-    resultText.textContent = "only 1 ~ 100";
+    resultText.textContent = "only 1 ~ 100"; // 입력 숫자 범위
     return;
   }
 
   if (userValueList.includes(userValue)) {
-    resultText.textContent = "Number already entered.";
+    resultText.textContent = "Number already entered."; // 이미 입력한 숫자면 안내 문자.
     return;
   }
 
   ctn--;
-  chanceArea.innerHTML = `Count : ${ctn}`;
-  userValueList.push(userValue);
+  chanceArea.innerHTML = `Count : ${ctn}`; // 백틱 사용 문자 + 숫자
+  userValueList.push(userValue); // 유저가 입력한 숫자가 리스트에 들어감
 
   if (userValue < number) {
-    imgDisplay1.style.display = "block";
-    imgDisplay2.style.display = "none";
+    imgDisplay1.style.display = "block"; // up 이미지 보이게
+    imgDisplay2.style.display = "none"; // down 이미지 안보이게
     resultText.textContent = "Up!"; // 낮을 때
   } else if (userValue > number) {
-    imgDisplay1.style.display = "none";
-    imgDisplay2.style.display = "block";
+    imgDisplay1.style.display = "none"; // down 이미지 안보이게
+    imgDisplay2.style.display = "block"; // up 이미지 보이게
     resultText.textContent = "Down!"; // 높을 때
   } else {
     resultText.textContent = "Good!";
-    imgDisplay1.style.display = "none";
+    imgDisplay1.style.display = "none"; // 정답이면 둘 다 이미지 안보이게
     imgDisplay2.style.display = "none";
     gameOver = true; // 정답
   }
@@ -61,7 +61,7 @@ function play() {
   }
 
   if (gameOver == true) {
-    playButton.disabled = true;
+    playButton.disabled = true; // 게임이 끝나면 go 버튼 비활성화
   }
 }
 
